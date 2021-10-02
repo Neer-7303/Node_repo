@@ -1,0 +1,10 @@
+extends ./layout/main-layout.pug
+block styles 
+  link(rel='stylesheet' href='/css/list.css')
+block content
+    if lo_users.length
+        ol.list-container 
+            each usr in lo_users
+                li.usr-item #{usr.username}
+    else    
+        .no-record No Record found
